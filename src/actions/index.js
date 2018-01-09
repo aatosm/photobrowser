@@ -7,8 +7,8 @@ export const FETCH_PHOTOS = 'FETCH_PHOTOS';
 export const FETCH_ALBUMS = 'FETCH_ALBUMS';
 
 
-export function fetchPhotos(){
-  const request = axios.get(PHOTOS_URL);
+export function fetchPhotos(id){
+  const request = axios.get(PHOTOS_URL+'?albumId='+id);
 
   return {
     type: FETCH_PHOTOS,

@@ -1,25 +1,28 @@
 import React, { Component } from "react";
-import { bindActionCreators } from 'redux';
 import { connect } from "react-redux";
-import { fetchPhotos } from '../actions/index';
 
 class GridView extends Component {
 
-  componentDidMount(){
-    this.props.fetchPhotos();
-  }
-
   render() {
+
+    console.log(this.props.photos);
 
     let photos = this.props.photos.map(photo => {
       return(
-        <img src={photo.thumbnailUrl} />
+        <img key={photo.id} src={photo.thumbnailUrl} />
       );
     });
+
+    if(this.props.photos.length === 0){
+      return (
+        <h4>Load pictures by selecting an album!</h4>
+      );
+    }
 
     return (
       <div>{photos}</div>
     );
+
   }
 }
 
@@ -29,8 +32,4 @@ function mapStateToProps(state){
   }
 }
 
-function mapDispatchToProps(dispatch){
-  return bindActionCreators({ fetchPhotos }, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(GridView);
+export default connect(mapStateToProps)(GridView);
