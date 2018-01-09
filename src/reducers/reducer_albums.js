@@ -1,8 +1,8 @@
-import { FETCH_PHOTOS } from '../actions/index';
+import { FETCH_ALBUMS } from '../actions/index';
 
 export default function(state = [], action){
   switch (action.type) {
-    case FETCH_PHOTOS:
+    case FETCH_ALBUMS:
       return action.payload.data;
 
   }

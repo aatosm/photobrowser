@@ -24,7 +24,6 @@ class GridView extends Component {
 }
 
 function mapStateToProps(state){
-  console.log(state);
   return {
     photos: state.photos
   }
