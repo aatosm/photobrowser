@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
+
 class GridView extends Component {
 
   render() {
-
-    console.log(this.props.photos);
 
     let photos = this.props.photos.map(photo => {
       return(
@@ -26,10 +25,12 @@ class GridView extends Component {
   }
 }
 
+
 function mapStateToProps(state){
   return {
     photos: state.photos
   }
 }
+
 
 export default connect(mapStateToProps)(GridView);

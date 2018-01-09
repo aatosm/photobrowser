@@ -5,6 +5,7 @@ import { fetchAlbums } from '../actions/index';
 import { fetchPhotos } from '../actions/index';
 import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 
+
 class Dropdown extends Component {
   constructor(props){
     super(props);
@@ -46,14 +47,17 @@ class Dropdown extends Component {
 
 }
 
+
 function mapStateToProps(state){
   return {
     albums: state.albums
   }
 }
 
+
 function mapDispatchToProps(dispatch){
   return bindActionCreators({ fetchAlbums, fetchPhotos }, dispatch);
 }
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Dropdown);
