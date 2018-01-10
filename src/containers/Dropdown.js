@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import { fetchAlbums } from '../actions/index';
 import { fetchPhotos } from '../actions/index';
 import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';

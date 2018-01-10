@@ -5,6 +5,7 @@ const ALBUMS_URL = 'http://jsonplaceholder.typicode.com/albums';
 
 export const FETCH_PHOTOS = 'FETCH_PHOTOS';
 export const FETCH_ALBUMS = 'FETCH_ALBUMS';
+export const FETCH_PHOTO = 'FETCH_PHOTO';
 
 
 export function fetchPhotos(id){
@@ -22,6 +23,16 @@ export function fetchAlbums(){
 
   return {
     type: FETCH_ALBUMS,
+    payload: request
+  }
+}
+
+
+export function fetchPhoto(id){
+  const request = axios.get(PHOTOS_URL+'/'+id);
+
+  return {
+    type: FETCH_PHOTO,
     payload: request
   }
 }

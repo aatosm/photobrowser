@@ -1,14 +1,17 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 class GridView extends Component {
 
   render() {
-
+    //<Link key={photo.id} to={`/photos/${photo.id}`}>
     let photos = this.props.photos.map(photo => {
       return(
-        <img key={photo.id} src={photo.thumbnailUrl} />
+        <Link key={photo.id} to={`/photos/${photo.id}`}>
+          <img key={photo.id} src={photo.thumbnailUrl} />
+        </Link>
       );
     });
 
@@ -19,7 +22,9 @@ class GridView extends Component {
     }
 
     return (
-      <div>{photos}</div>
+      <div>
+        {photos}
+      </div>
     );
 
   }
