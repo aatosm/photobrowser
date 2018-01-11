@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import style from '../style';
 
 class GridView extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+      currentAlbumId: null
+    }
+    this.updateCurrent = this.updateCurrent.bind(this);
+  }
+
+  updateCurrent(){
+    
+  }
+
   render() {
-    //<Link key={photo.id} to={`/photos/${photo.id}`}>
+
     let photos = this.props.photos.map(photo => {
       return(
         <Link key={photo.id} to={`/photos/${photo.id}`}>
-          <img key={photo.id} src={photo.thumbnailUrl} />
+          <img src={photo.thumbnailUrl} />
         </Link>
       );
     });
@@ -22,7 +34,7 @@ class GridView extends Component {
     }
 
     return (
-      <div>
+      <div style={style.divStyle}>
         {photos}
       </div>
     );

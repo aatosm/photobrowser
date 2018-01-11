@@ -36,7 +36,8 @@ class Dropdown extends Component {
       <form>
         <FormGroup onChange={this.handleSubmit}>
           <ControlLabel>Select album to show</ControlLabel>
-          <FormControl componentClass='select' inputRef={input => this.currentAlbum = input}>
+          <FormControl componentClass='select' defaultValue='Select' inputRef={input => this.currentAlbum = input}>
+            <option>--</option>
             {albums}
           </FormControl>
         </FormGroup>
