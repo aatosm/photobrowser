@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchAlbums } from '../actions/index';
 import { fetchPhotos } from '../actions/index';
 import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
+import style from '../style';
 
 
 class Dropdown extends Component {
@@ -38,7 +39,7 @@ class Dropdown extends Component {
     });
 
     return (
-      <form>
+      <form style = { style.dropdown }>
         <FormGroup onChange={this.handleSubmit}>
           <ControlLabel>Select album to show</ControlLabel>
           <FormControl componentClass='select' inputRef={input => this.currentAlbum = input}>

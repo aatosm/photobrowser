@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchPhoto } from '../actions/index';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
+import style from '../style';
+
+import Layout from '../components/Layout';
 
 
 class PhotoPage extends Component {
@@ -20,7 +23,11 @@ class PhotoPage extends Component {
         <Grid>
           <Row>
             <Col md={12}>
-              <h1>photobrowser</h1>
+              <Layout />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12}>
               <p>Loading image...</p>
             </Col>
           </Row>
@@ -32,17 +39,17 @@ class PhotoPage extends Component {
       <Grid>
         <Row>
           <Col md={12}>
-            <h1>photobrowser</h1>
+            <Layout />
           </Col>
         </Row>
         <Row>
-          <Col md={12}>
-            <h3>{this.props.photo.title}</h3>
+          <Col md={12} style={style.photo}>
+            <h3 style={style.photoTitle}>{this.props.photo.title}</h3>
             <img src={this.props.photo.url} />
           </Col>
         </Row>
         <Row>
-          <Col>
+          <Col md={12}>
             <Link to='/'>
               <Button bsStyle="danger">Go back</Button>
             </Link>

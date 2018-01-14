@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import GridView from '../containers/GridView';
 import Dropdown from '../containers/Dropdown';
+import Layout from './Layout';
 import { Grid, Row, Col } from 'react-bootstrap';
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
       <Grid>
         <Row>
           <Col md={12}>
-            <h1>photobrowser</h1>
+            <Layout />
           </Col>
         </Row>
         <Row>
