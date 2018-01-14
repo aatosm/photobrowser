@@ -5,18 +5,6 @@ import style from '../style';
 
 class GridView extends Component {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      currentAlbumId: null
-    }
-    this.updateCurrent = this.updateCurrent.bind(this);
-  }
-
-  updateCurrent(){
-    
-  }
-
   render() {
 
     let photos = this.props.photos.map(photo => {

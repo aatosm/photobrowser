@@ -8,7 +8,12 @@ class App extends Component {
     return (
       <Grid>
         <Row>
-          <Col md={2}>
+          <Col md={12}>
+            <h1>photobrowser</h1>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={4}>
             <Dropdown />
           </Col>
         </Row>

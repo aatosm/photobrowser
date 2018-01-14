@@ -9,17 +9,22 @@ import { FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 class Dropdown extends Component {
   constructor(props){
     super(props);
+    this.state = {
+      currentAlbumId: 1
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
   componentDidMount(){
     this.props.fetchAlbums();
+    this.props.fetchPhotos(this.state.currentAlbumId);
   }
 
 
   handleSubmit(event){
     event.preventDefault();
+    this.setState({ currentAlbumId: this.currentAlbum.value });
     this.props.fetchPhotos(this.currentAlbum.value);
   }
 
@@ -28,7 +33,7 @@ class Dropdown extends Component {
 
     let albums = this.props.albums.map(album => {
       return (
-        <option key={album.id}>{album.id}</option>
+        <option key={album.id} value={album.id}>{album.id}</option>
       );
     });
 
@@ -36,8 +41,7 @@ class Dropdown extends Component {
       <form>
         <FormGroup onChange={this.handleSubmit}>
           <ControlLabel>Select album to show</ControlLabel>
-          <FormControl componentClass='select' defaultValue='Select' inputRef={input => this.currentAlbum = input}>
-            <option>--</option>
+          <FormControl componentClass='select' inputRef={input => this.currentAlbum = input}>
             {albums}
           </FormControl>
         </FormGroup>
