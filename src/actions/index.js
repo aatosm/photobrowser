@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const PHOTOS_URL = 'http://jsonplaceholder.typicode.com/photos';
-const ALBUMS_URL = 'http://jsonplaceholder.typicode.com/albums';
+const PHOTOS_URL = 'https://jsonplaceholder.typicode.com/photos';
+const ALBUMS_URL = 'https://jsonplaceholder.typicode.com/albums';
 
 export const FETCH_PHOTOS = 'FETCH_PHOTOS';
 export const FETCH_ALBUMS = 'FETCH_ALBUMS';
