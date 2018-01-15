@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import style from '../style';
+import { Image } from 'react-bootstrap';
 
 class GridView extends Component {
 
@@ -11,7 +12,7 @@ class GridView extends Component {
       return(
         <div>
           <Link key={photo.id} to={`/photos/${photo.id}`}>
-            <img src={photo.thumbnailUrl} />
+            <Image src={photo.thumbnailUrl} rounded />
           </Link>
         </div>
       );

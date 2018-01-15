@@ -20,13 +20,13 @@ class PhotoPage extends Component {
 
     if(this.props.photo.id != this.props.match.params.id){
       return (
-        <Grid>
+        <Grid style={style.background}>
           <Row>
             <Col md={12}>
               <Layout />
             </Col>
           </Row>
-          <Row>
+          <Row style={style.loading}>
             <Col md={12}>
               <p>Loading image...</p>
             </Col>
@@ -36,7 +36,7 @@ class PhotoPage extends Component {
     }
 
     return (
-      <Grid>
+      <Grid style={style.background}>
         <Row>
           <Col md={12}>
             <Layout />
@@ -44,14 +44,15 @@ class PhotoPage extends Component {
         </Row>
         <Row>
           <Col md={12} style={style.photo}>
-            <h3 style={style.photoTitle}>{this.props.photo.title}</h3>
+            <h2><u>Photo id {this.props.photo.id}</u></h2>
+            <h2 style={style.photoTitle}>{this.props.photo.title}</h2>
             <img src={this.props.photo.url} />
           </Col>
         </Row>
         <Row>
           <Col md={12}>
             <Link to='/'>
-              <Button bsStyle="danger">Go back</Button>
+              <Button bsStyle="danger" style={style.backBtn}>Go back</Button>
             </Link>
           </Col>
         </Row>

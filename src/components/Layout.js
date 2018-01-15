@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import { Nav } from 'react-bootstrap';
+import style from '../style';
 
 class Layout extends Component {
   render() {
     return (
       <Nav bsStyle="tabs">
-        <h1>photobrowser</h1>
+        <h1 style={style.header}>photobrowser</h1>
       </Nav>
     );
   }

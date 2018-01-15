@@ -3,11 +3,12 @@ import GridView from '../containers/GridView';
 import Dropdown from '../containers/Dropdown';
 import Layout from './Layout';
 import { Grid, Row, Col } from 'react-bootstrap';
+import style from '../style';
 
 class App extends Component {
   render() {
     return (
-      <Grid>
+      <Grid style={style.background}>
         <Row>
           <Col md={12}>
             <Layout />
