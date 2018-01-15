@@ -10,8 +10,8 @@ class GridView extends Component {
 
     let photos = this.props.photos.map(photo => {
       return(
-        <div>
-          <Link key={photo.id} to={`/photos/${photo.id}`}>
+        <div key={photo.id}>
+          <Link to={`/photos/${photo.id}`}>
             <Image src={photo.thumbnailUrl} rounded />
           </Link>
         </div>
