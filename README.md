@@ -15,3 +15,14 @@ App deployed on Heroku, [check it out!](https://vast-sierra-33809.herokuapp.com/
 - [react-bootstrap](https://github.com/react-bootstrap/react-bootstrap) (styling)
 - [JSONPlaceholder](http://jsonplaceholder.typicode.com/) (Fake online REST API)
 - [Heroku](https://www.heroku.com/) (Deployment)
+
+### To run locally:
+
+Node.js needs to be installed.
+
+```
+git clone https://github.com/aatosm/photobrowser.git
+cd photobrowser
+npm install
+npm start
+```
